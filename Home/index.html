@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <div class="main_left">
+    <div class="both">
+      <div class="logo">
+        <img src="LOGO2.jpg">
+      </div>
+      <h2>PodLibrary</h2>
+    </div>  
+    <ul>
+      <li  id="initial">
+        <div class="icons"><i class="fa-solid fa-house"></i></div>Home</li>
+      <li>
+        <div class="icons"><i class="fa-solid fa-table-columns"></i></div>Category</li>
+      <li>
+        <div class="icons"><i class="fa-regular fa-pen-to-square"></i></div>Authors</li>
+      <li id="login"><div class="icons"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>Login</li>
+    </ul>
+    <ul>
+      <li>
+        <div class="icons"><i class="fa-solid fa-gear"></i></div>Settings</li>
+      <li>
+        <div class="icons"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>Logout</li>
+    </ul>
+  </div>
+
+  <div id="main" class="main main_left">
+      <div id="close"><i class="fa-solid fa-xmark"></i></div>
+     <div class="account"><i class="fa-solid fa-user"></i></div>
+     <h3>User_sname</h3>
+     <ul>
+      <li>
+        <div id="upd" class="icons"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>upload</li>
+      <li>
+        <div class="icons"><i class="fa-regular fa-heart"></i></div>Favourites</li>
+        <li>
+          <div class="icons"><i class="fa-solid fa-file-arrow-down"></i></div>Downloads</li>
+          <li><div class="icons"><i class="fa-solid fa-share-nodes"></i></div>Share</li>
+      
+     </ul>
+  </div>
+
+  <div id="body2" class="body2">
+    <div class="head" id="head">
+       <div class="bar">
+         <input id="input" name="search" placeholder="search here">
+       </div> 
+       <div id="search_div">
+          <i id="search" class="fa-solid fa-magnifying-glass"></i>
+       </div>  
+       <i id="cross" class="fa-solid fa-xmark"></i>
+        <!-- upload and user-->
+        <div id="both2" class="both2">
+          <div id="upload" class="upload">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div id="profile" class="profile"><i id="icon" class="fa-solid fa-user"></i></div>  
+        </div>  
+    </div>
+
+    
+      <!-- <div id="normal" class="div1">
+      <div class="more see-all ">
+         <h3>Most Popular</h3>
+         <button id="seeAll">See all</button>
+      </div>   
+      <div id="popular" class="popular initial">
+        <div class="book1">
+           <img src="book1.webp">
+           <h3>It Ends With Us</h3>
+            <p>Colleen Hoover</p>
+        </div>
+      
+        <div class="book1">
+           <img src="book3.webp">
+           <h3>The story of Tata</h3>
+           <p>Ratan Tata</p>
+        </div>
+
+        <div class="book1">
+          <img src="book2.webp">
+          <h3> HereThere and Everywhere : Best-Loved</h3>
+          <p>Murty Sudha </p>
+       </div>
+
+       <div class="book1">
+        <img src="book1.webp">
+        <h3>It Ends With Us</h3>
+         <p>Colleen Hoover</p>
+     </div>
+   
+     <div class="book1">
+        <img src="book3.webp">
+        <h3>The story of Tata</h3>
+        <p>Ratan Tata</p>
+     </div>
+
+     <div class="book1">
+       <img src="book2.webp">
+       <h3> HereThere and Everywhere : Best-Loved</h3>
+       <p>Murty Sudha </p>
+     </div>
+
+     <div class="book1">
+      <img src="book3.webp">
+      <h3>The story of Tata</h3>
+      <p>Ratan Tata</p>
+     </div>
+
+     <div class="book1 add">
+       <img src="book1.webp">
+       <h3>It Ends With Us</h3>
+       <p>Colleen Hoover</p>
+     </div>
+
+     <div class="book1 add">
+      <img src="book1.webp">
+      <h3>It Ends With Us</h3>
+      <p>Colleen Hoover</p>
+     </div>
+
+     <div class="book1 add">
+       <img src="book3.webp">
+      <h3>The story of Tata</h3>
+      <p>Ratan Tata</p>
+      </div>
+
+     <div class="book1 add">
+       <img src="book2.webp">
+       <h3> HereThere and Everywhere : Best-Loved</h3>
+       <p>Murty Sudha </p>
+      </div>
+ 
+      <div class="book1 add">
+        <img src="book3.webp">
+        <h3>The story of Tata</h3>
+        <p>Ratan Tata</p>
+     </div>
+
+     <div class="book1 add">
+        <img src="book3.webp">
+       <h3>The story of Tata</h3>
+       <p>Ratan Tata</p>
+     </div>
+
+     <div class="book1 add">
+      <img src="book2.webp">
+      <h3> HereThere and Everywhere : Best-Loved</h3>
+      <p>Murty Sudha </p>
+    </div> 
+
+    <div class="less">
+      <button id="seeLess" class="see-all">See less</button>
+    </div>
+  </div>  
+</div> -->
+
+
+
+       <!--<div class="more">
+         <h3>Most Popular</h3>
+         <button>See all</button>
+      </div>   
+
+
+     
+
+
+    <div class="div1">
+      <div class="more">
+         <h3>Most Popular</h3>
+         <button>See all</button>
+      </div>   
+      <div class="popular 2">
+        <div class="book1">
+           <img src="book1.webp">
+           <h3>It Ends With Us</h3>
+            <p>Colleen Hoover</p>
+        </div>
+      
+        <div class="book1">
+           <img src="book1.webp">
+           <h3>It Ends With Us</h3>
+           <p>Colleen Hoover</p>
+        </div>
+      </div>  
+    </div> -->
+
+    <div id="home" class="home">
+      <div class="headings">
+         <h2>Most Popular Books</h2>
+         <button class="see-all" id="see-all-popular">See All</button>
+      </div>   
+      <div class="books-container" id="popular-books">
+         <!-- Books will be dynamically inserted here -->
+      </div>
+      <button class="see-less" id="see-less-popular" style="display: none;">See Less</button>
+  </div>
+
+
+  <div id="categories" class="home">
+     <h2 class="headings">Caterogies</h2>
+     <div class="maths">
+      <div class="headings">
+        <h2>Mathematics Related Books</h2>
+        <button class="see-all" id="see-all-maths">See All</button>
+     </div>  
+     <div class="books-container" id="maths">
+      <!-- Books will be dynamically inserted here -->
+   </div>
+   <button class="see-less" id="see-less-maths" style="display: none;">See Less</button> 
+     </div>
+
+     <div class="science">
+      <div class="headings">
+        <h2>Science Related Books</h2>
+        <button class="see-all" id="see-all-science">See All</button>
+     </div>  
+     <div class="books-container" id="science">
+      <!-- Books will be dynamically inserted here -->
+   </div>
+   <button class="see-less" id="see-less-science" style="display: none;">See Less</button> 
+     </div>
+  </div>
+
+
+
+  <div id="authors">
+      <h2>Authors</h2>
+      <div class="authors-container">
+          <div class="author">Author 1</div>
+          <div class="author">Author 2</div>
+      </div>
+  </div>
+
+  
+</div>
+
+   
+    <script src="home.js"></script>
+</body>
+</html>

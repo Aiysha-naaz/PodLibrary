@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Book</title>
+    <link rel="stylesheet" href="upd.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Book</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+            
+            <label for="bookAuthor">Author:</label>
+            <input type="text" id="bookAuthor" name="bookAuthor" required>
+            
+            <label for="bookDescription">Description:</label>
+            <textarea id="bookDescription" name="bookDescription" required></textarea>
+            
+            <label for="bookCover">Cover Image:</label>
+            <input type="file" id="bookCover" name="bookCover" accept="image/*" required>
+            
+            <label for="bookFile">Book PDF:</label>
+            <input type="file" id="bookFile" name="bookFile" accept=".pdf" required>
+            
+            <button type="submit">Upload Book</button>
+        </form>
+    </div>
+    <script src="upload.js"></script>
+</body>
+</html>
