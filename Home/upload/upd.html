@@ -23,11 +23,42 @@
             <input type="file" id="bookCover" name="bookCover" accept="image/*" required>
             
             <label for="bookFile">Book PDF:</label>
-            <input type="file" id="bookFile" name="bookFile" accept=".pdf" required>
+            <input type="file" id="bookFile" name="bookFile" accept="application/pdf" required>
             
             <button type="submit">Upload Book</button>
         </form>
     </div>
-    <script src="upload.js"></script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            const imageInput = document.getElementById('bookCover');
+            const pdfInput = document.getElementById('bookFile');
+            const imageFile = imageInput.files[0];
+            const pdfFile = pdfInput.files[0];
+
+            if (!imageFile) {
+                alert('Please upload an image file.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!pdfFile) {
+                alert('Please upload a PDF file.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!imageFile.type.startsWith('image/')) {
+                alert('Please upload a valid image file.');
+                event.preventDefault();
+                return;
+            }
+
+            if (pdfFile.type !== 'application/pdf') {
+                alert('Please upload a valid PDF file.');
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
 </body>
 </html>

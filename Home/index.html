@@ -8,24 +8,43 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
-  <div class="main_left">
+  
+  <div id="main_left" class="main_left">
     <div class="both">
       <div class="logo">
         <img src="LOGO2.jpg">
       </div>
       <h2>PodLibrary</h2>
     </div>  
-    <ul>
-      <li  id="initial">
-        <div class="icons"><i class="fa-solid fa-house"></i></div>Home</li>
-      <li>
-        <div class="icons"><i class="fa-solid fa-table-columns"></i></div>Category</li>
-      <li>
-        <div class="icons"><i class="fa-regular fa-pen-to-square"></i></div>Authors</li>
-      <li id="login"><div class="icons"><i class="fa-solid fa-arrow-right-to-bracket"></i></div>Login</li>
+    <ul id="bottom_menu">
+      <a href="#home">
+         <li  id="initial">
+            <div class="icons"><i class="fa-solid fa-house"></i></div><P>Home</P>
+          </li>
+      </a>
+
+      <a href="#categories">  
+          <li>
+            <div class="icons"><i class="fa-solid fa-table-columns"></i></div><p>Caterogies</p>
+          </li>
+      </a>
+
+        <li id="upd" class="upd">
+          <div class="icons"><i class="fa-solid fa-plus"></i></div><p>Upload</p>
+        </li>
+        
+        <a href="#Authors">
+           <li>
+              <div class="icons"><i class="fa-regular fa-pen-to-square"></i></div><p>Authors</p>
+           </li>
+        </a>
+
+       <li id="login"><div class="icons"><i class="fa-solid fa-arrow-right-to-bracket"></i></div><p>Login</p></li>
     </ul>
-    <ul>
+
+
+    
+    <ul id="settings">
       <li>
         <div class="icons"><i class="fa-solid fa-gear"></i></div>Settings</li>
       <li>
@@ -35,22 +54,56 @@
 
   <div id="main" class="main main_left">
       <div id="close"><i class="fa-solid fa-xmark"></i></div>
-     <div class="account"><i class="fa-solid fa-user"></i></div>
-     <h3>User_sname</h3>
+    <!-- user icon -->
+    <div class="user-picture">
+      <img id="userPic" src="path/to/default/user-icon.png">
+      <input type="file" id="fileInput" accept="image/*" style="display:none;">
+    </div>
+    
+    
+
+    <!--<div class="account"><i class="fa-solid fa-user"></i></div>-->
+    <!-- <div class="user-edit">
+      <h3>User_sname</h3><i class="fa-regular fa-pen-to-square"></i>
+     </div>-->
+
+     <div class="username-edit">
+      <span id="usernameDisplay">User_Name</span>
+      <input type="text" id="usernameInput" style="display:none;">
+      <div id="editUsernameBtn" class="editbtn"><i class="fa-regular fa-pen-to-square"></i></div>
+    </div>
+
      <ul>
-      <li>
-        <div id="upd" class="icons"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>upload</li>
+      <li id="upd" >
+        <div class="icons"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>upload</li>
       <li>
         <div class="icons"><i class="fa-regular fa-heart"></i></div>Favourites</li>
-        <li>
-          <div class="icons"><i class="fa-solid fa-file-arrow-down"></i></div>Downloads</li>
-          <li><div class="icons"><i class="fa-solid fa-share-nodes"></i></div>Share</li>
+          <li class="share-button" onclick="toggleShareOptions()"><div class="icons"><i class="fa-solid fa-share-nodes"></i></div>Share</li>
+          <div id="share-options" class="share-options">
+            <a href="#" class="share-option" id="facebook-share">
+              <i class="fa-brands fa-facebook"></i>Facebook
+            </a>
+            <a href="#" class="share-option" id="twitter-share">
+              <i class="fa-brands fa-twitter"></i>Twitter
+            </a>
+            <a href="#" class="share-option" id="linkedin-share">
+              <i class="fa-brands fa-linkedin-in"></i>Linkedin
+            </a>
+            <a href="#" class="share-option" id="whatsapp-share">
+              <i class="fa-brands fa-whatsapp"></i>Whatsapp
+            </a>
+          </div>
       
      </ul>
   </div>
 
   <div id="body2" class="body2">
     <div class="head" id="head">
+      <div id="menu-drawer" class="menu-drawer">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+ 
+    
        <div class="bar">
          <input id="input" name="search" placeholder="search here">
        </div> 
@@ -204,11 +257,12 @@
          <!-- Books will be dynamically inserted here -->
       </div>
       <button class="see-less" id="see-less-popular" style="display: none;">See Less</button>
-  </div>
+    </div>
 
 
   <div id="categories" class="home">
      <h2 class="headings">Caterogies</h2>
+
      <div class="maths">
       <div class="headings">
         <h2>Mathematics Related Books</h2>
@@ -230,20 +284,32 @@
    </div>
    <button class="see-less" id="see-less-science" style="display: none;">See Less</button> 
      </div>
+
+     
+  <div class="general">
+    <div class="headings">
+      <h2>General Books</h2>
+      <button class="see-all" id="see-all-general">See All</button>
+   </div>  
+   <div class="books-container" id="general">
+    <!-- Books will be dynamically inserted here -->
+ </div>
+ <button class="see-less" id="see-less-general" style="display: none;">See Less</button> 
+   </div>
   </div>
 
-
-
-  <div id="authors">
+  <div id="Authors" class="authors home">
+    <div class="headings">
       <h2>Authors</h2>
-      <div class="authors-container">
-          <div class="author">Author 1</div>
-          <div class="author">Author 2</div>
-      </div>
-  </div>
-
-  
+      <button class="see-all" id="see-all-author">See All</button>
+   </div>  
+   <div class="books-container" id="author">
+    <!-- Books will be dynamically inserted here -->
+ </div>
+ <button class="see-less" id="see-less-author" style="display: none;">See Less</button> 
+   </div>
 </div>
+
 
    
     <script src="home.js"></script>

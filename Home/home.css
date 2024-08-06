@@ -8,6 +8,7 @@ body{
     display: flex;
     background-color: rgb(240, 243, 245);
     cursor: context-menu;
+    scroll-behavior: smooth; 
    
 }
 .body2{
@@ -15,6 +16,7 @@ body{
     margin-left: 22%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     transition: all .5s ease-in-out;
 }
 .body2.shrink{
@@ -26,7 +28,7 @@ body{
     background-color: white;
     margin: 12px;
     border-radius: 10px;
-    
+    padding-left: 20px;
 }
 button{
     width: 70px;
@@ -35,6 +37,7 @@ button{
     border: none;
     color: #2e99bd;
     background-color: aliceblue;
+   
 }
 
 
@@ -43,13 +46,26 @@ button{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    margin: 0 9px;
+    padding-left: 7px;
+    /* margin: 0 9px; */
 }
 .books-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* Default to 7 books per row */
     gap: 10px;
-    padding: 10px 10px 20px 20px;
+    padding: 10px 10px 20px 7px;
+
+}
+ 
+#author .book img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center;
+
+}
+#Authors{
+    margin-bottom: 20%;
 }
 
 .book {
@@ -88,28 +104,33 @@ button{
     margin: 10px;
     color: #555;
 }
-.see-less{
+/* .see-less{
     margin-left: 15px;
-}
+} */
 /* .see-all, .see-less {
     margin: 10px 0;
 } */
-
+.see-less{
+   right: 0;
+} 
+/* 
 /* Adjust layout when user account bar is visible */
-.user-account-bar.show {
+/* .user-account-bar.show {
     display: block;
-}
-
+} */
+/* 
 .user-account-bar.show ~ .content .books-container {
-    grid-template-columns: repeat(5, 1fr); /* 5 books per row */
-}
+    grid-template-columns: repeat(5, 1fr); /* 5 books per row  */
+
 
 
 .head{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 80px;
+    /* height: 80px; */
+    height: auto;
+    padding: 10px 0;
     justify-content: space-between; 
     border: 1px solid transparent; 
     box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.2); 
@@ -151,8 +172,9 @@ button{
     margin: 10px 0;
 }
 
-.main.show ~ .content .books-container {
+.main.show ~ .body2 .books-container {
     grid-template-columns: repeat(5, 1fr);  
+    overflow: hidden;
 }
 .main{
     /* position: fixed;
@@ -176,19 +198,63 @@ button{
     background-color: #2e99bd;
 }
 .account{
-    width: 20%;
+    width: 22%;
     height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: x-large;
-    background-color: #2e99bd;
-    color: white;
-    border: 1px solid gray;
+    background-color: aliceblue;
+    color: #555;
+    border: .2px solid gray;
     z-index: 1;
     margin: 10% 0 5%;
     border-radius: 50%;
    
+}
+
+/* profile picture */
+.user-picture {
+    position: relative;
+  }
+  
+#userPic {
+    background-color: #0077B5;
+    cursor: pointer;
+    width: 70px; /* Set an appropriate size */
+    height: 70px; /* Set an appropriate size */
+    border-radius: 50%; /* Make it round if it's a circular icon */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+  
+.username-edit{
+    display: flex;
+    align-items: start;
+    margin-top: 6px;
+    font-size: medium;
+    color: #555;
+    margin: 6px 20px;
+}
+.username-edit i{
+    margin-left: 10px;
+} 
+#usernameDisplay{
+    width: auto;
+    height: auto;
+    font-weight: 600;
+    position: relative;
+    
+    z-index: -1;
+    
+}
+#usernameInput{
+    height: 25px;
+    border-radius: 7px;
+    word-wrap: break-word;
+}
+#usernameInput:focus{
+   border: 1px solid #2e99bd;
+   outline: none;
 }
 
 /* 
@@ -219,6 +285,20 @@ button{
     background-color: rgb(0, 219, 219);
     color: white;
 }
+
+.menu-drawer{
+    position: absolute;
+    left: 3%;
+    top: 3%;
+    z-index: 1;
+   
+
+}
+#menu-drawer.close_drawer{
+    left: 27%;
+    transition: all.5s;
+}
+
 .main_left{
     width: 22%;
     height: 100%;
@@ -244,6 +324,8 @@ ul li{
     align-items: center;
     justify-content: start;
     padding-left: 12%;
+    font-size: medium;
+    color: rgb(53, 53, 53);
     
 }
 ul li .icons{
@@ -259,15 +341,15 @@ ul li .icons{
     color: rgb(0, 25, 71);
     background-color:rgb(237, 236, 236);
 }
-ul li{
-    font-size: medium;
-    color: rgb(53, 53, 53);
-}
+
 /* .active, li:active  {
     background-color: #f9f9f9;
     color: #2e99bd;
     font-weight:bold ;
 } */
+ul a{
+    text-decoration: none;
+} 
 .active_side{
         background-color:aliceblue;
         color: #2e99bd;
@@ -278,6 +360,56 @@ ul li{
     background-color: rgb(0, 219, 219); /* Background color for the icon container */
     color: white; /* Text color for the icon */
 }
+/* share options styling */
+.share-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    width: 150px;
+    z-index: 1;
+    transform: translateX(35px);
+    text-align: center;
+  }
+  
+  .share-option {
+    display: block;
+    padding: 10px;
+    font-size: medium;
+   
+  }
+
+  .share-option i{
+    font-size: larger;
+    margin-right: 7px;
+  }
+  .share-option:active{
+    color: rgb(0, 200, 200);
+  }
+  .share-option:hover{
+    background-color: aliceblue;
+
+  }
+  #facebook-share i{
+    color: #316FF6;
+  }
+  #twitter-share i{
+    color: #1DA1F2;
+  }
+  #linkedin-share i{
+    color: #0077B5 ;
+  }
+#whatsapp-share i{
+    color: #075E54;
+    
+}
+
+  .share-option img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    
+  }
  
 .both{
     display: flex;
@@ -343,7 +475,7 @@ ul li{
     height: 100%;
     display: flex;
     align-items: center;
-    right: -70%;
+    right: -70%; 
     position: relative;
     transition: .5s ease-in-out;
     opacity: 0;
@@ -352,7 +484,7 @@ ul li{
 }
 .bar.active{
     right: 0;
-    width: 80%;
+    width: 83%;
     margin-left: 2%;
 }
 input{
@@ -360,28 +492,40 @@ input{
     width: 100%;
     border: none;
     outline: none;
-    padding: 1%;
-    border-bottom: 1px solid black;
-    
+    border-radius: 20px;
+    background: aliceblue;
+    padding: 2%;
+}
+input:hover{
+    background-color: #ddd;
+}
+input:focus{
+    border: 2px solid #2e99bd;
+    border-radius: 20px;
+    background: aliceblue;
 }
 
 #search_div{
     position: absolute;
     right: 10%;
     /* transition: all 2s ease; */
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+#search_div:hover{
+    background-color: #2e99bd;
+    color:white;
 }
 #search_div.new{
     right: 31%;
 }
 #cross{
     position: absolute;
-    right: 14%;
+    right: 12%;
     opacity: 0;
     margin: 1%;
 }
 #cross.new2{
-    right:32% ;
+    right:30% ;
 }
 
 #search:hover + input{
@@ -392,28 +536,425 @@ input{
 
 
 @media screen and (max-width: 600px){
+   #menu-drawer{
+    display: none;
+   }
+   #main_left{
+    width: 100%;
+    display: flex;  
+    flex-direction: row;
+    top: 91%;
+    background-color: aqua;
+
+   }
+   #main_left .both ,#main_left #settings{
+    display: none;
+    
+   } 
+   #main_left #bottom_menu{
+   width: 100%;
+   height: 10%;
+   display: flex;
+   justify-content:space-between;
+   margin-top: 0;
+   background-color:#2e99bd;
+   
+}
+#bottom_menu a li ,#bottom_menu li {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2e99bd;
+}
+#bottom_menu .upd{
+    transform: translateY(-30px);
+    background-color: #2e99bd;
+    border-radius: 60px;
+    width: 100px;
+    height: 70px;
+    font-size: large;
+    box-shadow: 3px 4px 10px -2px #0077B5;
+    
+}
+#bottom_menu .icons{
+    font-size: medium;
+   
+}
+
+#bottom_menu .upd  .icons{
+    font-size: large;
+    color: white;
+}
+
+   /* #bottom_menu  a li ,#bottom_menu #login {
+    width: auto;
+    height: auto;
+   background-color: #075E54; 
+     border-radius: 10px;  
+    
+    
+ }
+ 
+ #bottom_menu a li .icons {
+    width: 100%;
+    height: 100%;
+    padding: 20px; 
+    background-color: #2e99bd;
+ }  */
+   
+ /* #bottom_menu .upd{
+    position: absolute;
+    top: -21px;
+    left: 41%;
+    border-radius: 50px;
+    background-color: #0077B5;
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+ } 
+ #bottom_menu .upd .icons{
+    background-color: pink;
+    border-radius: 50px;
+    font-size: larger;
+    width: auto;
+    height: auto;
+ } */
+   #bottom_menu p{
+      display: none;
+   }
+    .body2{
+        margin: 0;
+        width: 100vw;
+    }
     .head{
         width: 100vw;
-      
-    }
-  
-    .upload , .profile{
-    display: none;
+        height: 10vh;
+        margin: 0;
     }
     input{
-        scale: 1.2;
+       height: 80%;
         left: 30%;
         font-size: x-small;
        
     }
-    #cross{
-        right: 15%;
-        
+    input:focus{
+        border: .02rem solid #0077B5; 
     }
-    #search{
-        right: 10% ;
-        
+    .bar{ 
+       right: -20%;
+       width: 100%;
+    }
+    .bar.active{
+        right: -12%;
+        scale: 1.09;
+        left: 12%;
+    }
+
+   #cross{
+    right: 15%;
+    font-size: small;
+   }
+    #search_div{
+        right: 7%;
+        font-size: small;
     }
     
+    #search_div.new{
+      right: 31%;
+    }
+    
+
+    #cross.new2{
+    right:30% ;
+    }
+  
+    .upload , .profile {
+        display: none;
+    }
+    
+   .main{
+    left:-70%;  
+    width: 70%;
+    
+   }
+   .main.show{
+    left: 0;
+   } 
+   #close{
+    margin-left: 25rem;
+   }
+
+   .books-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Default to 2 books per row */
+    gap: 10px;
+    overflow: scroll;  
+   }
+
+   .books-container.display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default to 2 books per row */
+    gap: 10px;
+     
+   }
+ 
+}
+/* after 768 */
+@media (min-width : 600px) and (max-width: 768px) {  
+    #main_left{
+        /* left: -30%; */
+        left: -30%;
+        transition: all .5s 
+      }
+    #main_left.show{
+        left: 0;
+        width: 25%;
+    }  
+
+    .body2{
+       width: 100%;
+       margin: 0;
+       /* margin-left: 22%; */
+    }
+    .body2.shrink2{
+        width: 75%;
+        margin-left: 25%;
+    }
+    .both2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+    } 
+     #search_div{
+        right: 15%;
+    }
+    
+    #search_div.new{
+        right: 28%;
+    }
+    #search_div.search_new{
+        right: 13%; 
+        /* when menu-drawer is vivsible */
+    }
+    /* #search_div.search_new2{
+        right: 50%; 
+        /* when menu-drawer is vivsible 
+    } */
+    
+
+    #cross.new2{
+         right:43% ;
+    } 
+    #cross.cross_new{
+        right: 18%;
+        /* cross when menu-drawer is visible */
+
+    } 
+    /* #cross.cross_new2{
+        right: 28%;
+        cross when menu-drawer is visible
+
+    }  */
+    #cross{
+        right: 25%;   
+        /* cross when menu-drawer is visible */
+    } 
+    .bar{
+        
+        right: 0;
+        width: 80vw;
+       
+     }
+    .bar.active{
+         right: 0;
+         width: 65%;
+         margin-left: 12%;
+     }
+     input{
+       height: auto;
+        left: 30%;
+
+        font-size: x-small;
+       
+    }
+    .books-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default to 7 books per row */
+    gap: 10px;
+    padding-right: 20px;
+    overflow: scroll;  
+    }
+    .body2.shrink{
+        width: 70%;
+    }  
+    .book{
+        margin-right: 0;
+        margin-bottom: 5px;
+    } 
+   .main{
+    right:-60%;  
+    width: 25%;
+   }
+   .body2.shrink{
+    width: 75%;
+   } 
+    
+   .main.show ~ .body2 .books-container {
+    grid-template-columns: repeat(4, 1fr);  
+    overflow: hidden;
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+#close{
+    margin: 1.5rem  8rem 0 0; 
+    font-size: small;
+}
+.upd{
+    display: none;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px)  {
+    .menu-drawer{
+        display: block;
+    }
+  
+    .body2{
+        width: 100%;
+        margin: 0;
+    }
+    .body2.shrink2{
+        width: 75%;
+        margin-right: 10%;
+    }
+    .books-container{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* Default to 7 books per row */
+        gap: 5px;
+        padding-right: 30px;
+        overflow: scroll;  
+    }
+    .book{
+        margin-right: 10%;
+        margin-bottom: 5px;
+    } 
+    .main.show ~ .body2 .books-container {
+        grid-template-columns: repeat(3, 1fr);  
+        overflow: scroll;
+        padding-right: 20px;
+        padding-left: 0;
+    }
+    #search_div{
+        right: 14%;
+    }
+    #search_div.new{
+        right: 28%;
+    }
+    #search_div.search_new{
+        right: 12%;
+    }
+    
+    #close{
+    margin: 1.5rem  8rem 0 0; 
+    font-size: small;
+    }
+    #cross{
+        right: 18%;   
+        /* cross when menu-drawer is visible */
+    } 
+    #cross.new2{
+        right:41% ;
+        font-size: small;
+   } 
+   #cross.cross_new{
+       right: 16%;
+       font-size: small;
+   }
+   .bar.active{
+    right: 0;
+    height: 70%;
+    width: 75%;
+    margin-left: 8%;
+    }
+   input{
+    height: 100%;
+  
+   left: 30%;
+   font-size: small;
+   color: #555;
+   }
+   .upd{
+    display: none;
+}
+} 
+@media (min-width:1024px) and (max-width:1440px){
+    .menu-drawer{
+        display: none;
+    }
+    #main_left{
+        left: 0;
+        width: 23%;
+        margin: 0;
+    }
+    .body2{
+        /* width: 80%;
+        margin-left: 22%; */
+        width: 78%;
+        margin-left: 23%;
+    }
+    .body2.shrink2{
+        width: 40%;
+        margin-right: 10%;
+    }
+    #search_div{
+        right: 10.5%;
+    }
+    #search_div.new{
+    right: 31%;
+    }
+    #cross{
+        right: 15%;   
+        /* cross when menu-drawer is visible */
+    } 
+    #cross.new2{
+        right:32% ;
+   } 
+    
+   .bar.active{
+    right: 0;
+    width: 80%;
+    margin-left: 2%;
+
+    }
    
+    input{
+       
+       left: 30%;
+       font-size: medium;
+    }
+    .books-container{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); /* Default to 7 books per row */
+        gap: 5px;
+        padding-right: 20px;
+       
+    }
+    .book{
+        margin-right: 10%;
+        margin-bottom: 5px;
+    } 
+    .main.show ~ .body2 .books-container {
+        grid-template-columns: repeat(5, 1fr);  
+       
+        padding-right: 20px;
+        padding-left: 0;
+    }
+    .upd{
+        display: none;
+    }
 }

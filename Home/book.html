@@ -14,15 +14,40 @@
         <h3 id="bookAuthor" class="book-author"></h3>
         <div class="buttons">
           <div class="box">
-              <i class="fa-solid fa-arrow-down"></i>
+              <i class="fa-solid fa-arrow-down"></i><p>Download</p>
           </div>
-          <div class="box">
-              <i class="fa-solid fa-share-nodes"></i>
+          <div class="share-button box">
+              <i class="fa-solid fa-share-nodes"></i><p class="share-button" onclick="toggleShareOptions()">Share</p>
+          </div>
+
+          <div id="fav-box" class="box"  onclick="toggleWishlist(this)">
+            <i id="fav" class="fa-solid fa-heart"></i>
+        </div>
+
+          <div id="share-options" class="share-options">
+            <a href="#" class="share-option" id="facebook-share">
+                <i class="fa-brands fa-facebook"></i>Facebook
+              </a>
+              <a href="#" class="share-option" id="twitter-share">
+                <i class="fa-brands fa-twitter"></i>Twitter
+              </a>
+              <a href="#" class="share-option" id="linkedin-share">
+                <i class="fa-brands fa-linkedin-in"></i>Linkedin
+              </a>
+              <a href="#" class="share-option" id="whatsapp-share">
+                <i class="fa-brands fa-whatsapp"></i>Whatsapp
+              </a>
           </div>
         </div>  
     </div>
 
     <div id="bookContent" class="book-content"></div>
+
+    <div id="book-pagination">
+      <button id="prev-page" onclick="changePage(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+      <span id="page-info">Page 1</span>
+      <button id="next-page" onclick="changePage(1)"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
     <script src="book.js"></script>
 </body>
 </html>

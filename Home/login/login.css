@@ -219,7 +219,7 @@ h1{
 }
 @media (min-width:1024px) and (max-width:1440px){
     .head{
-        left: 25%;
+        left: 23%;
     }
     .login{
         width: 60vw;
@@ -230,8 +230,8 @@ h1{
 
     
 
-/*  
-@media screen and (max-width: 768px) {
+/*   
+@media (min-width: 768px) and (max-width: 1024px)  {
     .image{
       display: block;
     }
@@ -245,5 +245,4 @@ h1{
         flex-direction: column;
        justify-content:center ;
         align-items: center;
-    }
-}   */
+    } */
