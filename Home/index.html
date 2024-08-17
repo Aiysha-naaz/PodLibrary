@@ -77,7 +77,7 @@
       <a href="upload/upd.html">
       <li id="upd" >
         <div class="icons"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>upload</li></a>
-      <li>
+      <li id="Seefav">
         <div class="icons"><i class="fa-regular fa-heart"></i></div>Favourites</li>
           <li class="share-button" onclick="toggleShareOptions()"><div class="icons"><i class="fa-solid fa-share-nodes"></i></div>Share</li>
           <div id="share-options" class="share-options">
@@ -121,8 +121,17 @@
         </div>  
     </div>
 
-    
-    
+   
+  <div id="Favourites" class="home fav">
+    <div class="headings">
+      <h2>fav Books</h2>
+      <button class="see-all" id="see-all-fav">See All</button>
+   </div>   
+   <div class="books-container" id="fav-books">
+    <!-- Books will be dynamically inserted here -->
+ </div>
+ <button class="see-less" id="see-less-fav" style="display: none;">See Less</button>
+  </div>
 
     <div id="home" class="home">
       <div class="headings">

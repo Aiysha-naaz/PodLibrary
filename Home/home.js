@@ -579,7 +579,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
  
  
+//fav books
+const favBooks=document.getElementById('fav-books');
+const  seeAllFav = document.getElementById('see-all-fav');
+const seeLessFav = document.getElementById('see-less-fav');
 
+seeAllFav.addEventListener('click', () => {
+    // aut_visibleCount = aut_books.length
+    //     displayBooksAut(aut_visibleCount);
+        favBooks.classList.toggle('display');
+        seeAllFav.style.display = 'none';
+        seeLessFav.style.display = 'block';
+    });
+
+    seeLessFav.addEventListener('click', () => {
+        // aut_visibleCount = 7;
+        // displayBooksAut(aut_visibleCount);
+        favBooks.classList.remove('display');
+        seeAllFav.style.display = 'block';
+        seeLessFav.style.display = 'none';
+    });
+ 
+    let favDiv = document.getElementById('Seefav');
+    favDiv.onclick = function() {
+        document.getElementById('Favourites').style.display="block";
+    }
 
 
     //user account events 
