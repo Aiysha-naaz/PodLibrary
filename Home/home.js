@@ -21,19 +21,17 @@ cross.onclick = function(){
 //click event on upload button
 let upload = document.getElementById('upload');
 
-upload.onclick= function() {
+upload.onclick = function() {
     // Provide the relative path to the target page
     window.location.href = 'upload/upd.html';
 }
-let upd = document.getElementById('upd');
-upd.onclick = function() {
+
+
+
+let register = document.getElementById('register');
+register.onclick=function() {
     // Provide the relative path to the target page
-    window.location.href = 'upload/upd.html';
-}
-let login = document.getElementById('login');
-login.onclick=function() {
-    // Provide the relative path to the target page
-    window.location.href = 'login/login.html';
+    window.location.href = 'register/register.html';
 }
 // Create a MediaQueryList object
 // var x = window.matchMedia("(max-width: 700px)");

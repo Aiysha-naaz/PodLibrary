@@ -1,71 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login form</title>
-  <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
-   <div class="login" id="login">
-    <div class="image"></div>
-      <div class="head" id="demo">
-        <h1 id="demo1"></h1>
-        <h1>eBook Library</h1>
-      </div>  
-      <form class="login__form">
-         <div class="logo"></div>
-         <h1 class="login__title">Login</h1>
+      <div id="loginForm" class="main">
+            <h1>PodLibrary</h1>
+          
+            <form action="">
+                  <label for="first">
+                        Username:
+                  </label>
+                  <input type="text" 
+                         id="username" 
+                         name="first" 
+                         placeholder="Enter your Username" required>
 
-         <div class="login__inputs">
-            <div class="login__box">
-               <input name="Name" required class="login__input"> 
-               <div class="label">Name</div>
-            </div>
-            
+                  <label for="password">
+                        Password:
+                  </label>
+                  <input type="password"
+                         id="password" 
+                         name="password"
+                         placeholder="Enter your Password" required>
 
-            <div class="login__box">
-               <input  name="College NAme" required class="login__input">
-               <div class="label">College</div>
-            </div>
-
-            <div class="login__box">
-              <input  name="Stream" required class="login__input">
-              <div class="label">Stream</div>
-            </div>
-
-            <div class="login__box">
-              <input name="Course" required class="login__input">
-              <div class="label">Course</div>
-            </div>
-            
-            <div class="login__box">
-              <input name="Email ID" required class="login__input">
-              <div class="label">Email ID</div>
-            </div>
-         </div>
-
-        <!--- <div class="login__check">
-            <div class="login__check-box">
-               <input type="checkbox" class="login__check-input" id="user-check">
-               <label for="user-check" class="login__check-label">Remember me</label>
-            </div>
-
-            <a href="#" class="login__forgot">Forgot Password?</a>
-         </div>-->
-
-         <button type="submit" class="login__button">Login</button>
-
-         <!--<div class="login__register">
-            Already have an account? <a href="#"> Sign in</a>
-         </div>-->
-      </form>
-
-   </div>
+                  <div class="wrap">
+                        <button id="log" type="submit">
+                               
+                              Login
+                              
+                        </button>
+                  </div>
+            </form>
+            <p id="regPara">Not registered?
+                  <a href="/home/register/register.html">Register</a>
+            </p>
+      </div>
 </body>
-</html>
-</head>
-<script src="login.js"></script>
-<body>
 
+</html>
+
+</body>
 </html>

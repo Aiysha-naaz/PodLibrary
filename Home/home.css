@@ -536,6 +536,9 @@ input:focus{
 
 
 @media screen and (max-width: 600px){
+    #main{
+        display: none;
+    }
    #menu-drawer{
     display: none;
    }

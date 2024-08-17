@@ -1,20 +1,23 @@
-{/* <button onclick="typeWriter()">Click me</button>
 
-<p id="demo"></p>
+// let createAccount = document.getElementById('createAccount');
+// createAccount.onclick=function() {
+//     // Provide the relative path to the target page
+//     window.location.href = './register/register.html';
+// }
 
-// <script> */}
-document.getElementById("login");
-document.getElementById("demo");
-let type = document.getElementById("demo1");
-var i = 0;
-var txt = 'Poditivity';
-var speed = 100;
-
-function typeWriter() {
-   if (i < txt.length) {
-   type.innerHTML += txt.charAt(i);
-     i++;
-     setTimeout(typeWriter, speed);
-   }
- }
-type.addEventListener("animationend",typeWriter);
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+  
+    // Get form values
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+  
+    // Simple validation
+    if (username && password) {
+      // Redirect to home page
+      window.location.href = "/home/index.html"; // Replace with your home page URL
+    } else {
+      alert("Please fill in all the required details.");
+    }
+  });
+  
